@@ -1,0 +1,71 @@
+<!DOCTYPE>
+<html>
+<head>
+<title>Calcolatrice</title>
+<script type="text/javascript">
+var c= "";
+function add() {
+c='+';
+document.getElementById("operazione").value = c;
+}
+function sott() {
+c='-';
+document.getElementById("operazione").value = c;
+}
+function molt() {
+c='*';
+document.getElementById("operazione").value = c;
+}
+function divi() {
+c='/';
+document.getElementById("operazione").value = c;
+}
+function opera() {
+var a= parseInt(document.getElementById("primo").value);
+var b= parseInt(document.getElementById("secondo").value);
+var c=document.getElementById("operazione").value;
+var d=document.getElementById("risultato").value;
+if (a && b) {
+if (c=='+') {
+d=a+b;
+}
+else if (c=='-') {
+d=a-b;
+}
+else if (c=='*') {
+d=a*b;
+}
+else if (c=='/') {
+d=a/b;
+}
+else {
+alert('Fornire un operazione');
+d = 0;
+}
+document.getElementById("risultato").value = d;
+
+}
+else {
+alert('Inserire i due fattori');
+}
+} 
+</script>
+</head>
+<body bgcolor="#FFFFFF" textcolor="#000000" lang="it">
+<form id="a" action="#">
+<input id="primo" type="text" size="10">
+</form>
+<br/>
+<input id="add" type="button" value="+" onclick="add();"> <input id="sott" type="button" value="-" onclick="sott();"> <input id="molt" type="button" value="*" onclick="molt();"> <input id="divi" type="button" value="/" onclick="divi();"> <input id="operazione" type="text" size="5" maxlength="1">
+<br/>
+<form id="b" action="#">
+<input id="secondo" type="text" size="10">
+<br/>
+<input type="button" value="=" onclick="opera();">
+<br/>
+<textarea id="risultato" cols="10" rows="1"></textarea>
+</form>
+<br/>
+<p algin="justify">Per cancellare tutto premere il tasto <b>F5</b>.</p>
+</body>
+</html>
